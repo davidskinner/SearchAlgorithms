@@ -5,7 +5,8 @@ namespace SearchAlgorithms
     class Program
     {
         /// <summary>
-        /// Returns the position in the array
+        /// Returns the position in the array.
+        /// Took 10 seconds to implement.
         /// </summary>
         /// <param name="value">The value you are looking for.</param>
         /// <param name="Array">The array to look in.</param>
@@ -22,6 +23,15 @@ namespace SearchAlgorithms
             return false;
         }
 
+        /// <summary>
+        /// Stopping conditions for this recursive function are that we reach the end of the array or we find the value.
+        /// Took longer than I will say to implement.
+        /// </summary>
+        /// <param name="value">The value we are looking for.</param>
+        /// <param name="Array">The array we are searching through.</param>
+        /// <param name="position">Our place in the array.</param>
+        /// <param name="recurse">The truth value of whether or not the array contains the value.</param>
+        /// <returns></returns>
         public static bool LinearSearchRecursive(int value, int[] Array, int position, bool recurse)
         {
             if (position == Array.Length - 1)
@@ -34,6 +44,7 @@ namespace SearchAlgorithms
                 return true;
             }
 
+            // hang on to 'recurse' through the call stack
             recurse = LinearSearchRecursive(value, Array, ++position,recurse);
             return recurse;
         }
