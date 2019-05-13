@@ -1,0 +1,11 @@
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\bin\Debug\netcoreapp2.1\SearchAlgorithms.deps.json
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\bin\Debug\netcoreapp2.1\SearchAlgorithms.runtimeconfig.json
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\bin\Debug\netcoreapp2.1\SearchAlgorithms.runtimeconfig.dev.json
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\bin\Debug\netcoreapp2.1\SearchAlgorithms.dll
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\bin\Debug\netcoreapp2.1\SearchAlgorithms.pdb
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\obj\Debug\netcoreapp2.1\SearchAlgorithms.csprojAssemblyReference.cache
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\obj\Debug\netcoreapp2.1\SearchAlgorithms.csproj.CoreCompileInputs.cache
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\obj\Debug\netcoreapp2.1\SearchAlgorithms.AssemblyInfoInputs.cache
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\obj\Debug\netcoreapp2.1\SearchAlgorithms.AssemblyInfo.cs
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\obj\Debug\netcoreapp2.1\SearchAlgorithms.dll
+P:\Programming\Repositories\SearchAlgorithms\SearchAlgorithms\SearchAlgorithms\obj\Debug\netcoreapp2.1\SearchAlgorithms.pdb
