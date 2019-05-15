@@ -49,7 +49,12 @@ namespace SearchAlgorithms
             return recurse;
         }
 
-
+        /// <summary>
+        /// Keep dividing the sub-array based on the directi
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="Array"></param>
+        /// <returns></returns>
         public static bool BinarySearchIterative(int value, int[] Array)
         {
             // { 0, 1, 2, 3, 4, 5, 6, 7 };
@@ -88,7 +93,7 @@ namespace SearchAlgorithms
             ////bool recurse = false;
             ////bool answer = linearSearchIterative(2, integerArray);
             //answer = LinearSearchRecursive(7, integerArray, position,recurse);
-            answer = BinarySearchIterative(7, sortedArray);
+            answer = BinarySearchIterative(5, sortedArray);
             Console.WriteLine(answer);
             Console.ReadLine();
         }
