@@ -49,16 +49,46 @@ namespace SearchAlgorithms
             return recurse;
         }
 
+
+        public static bool BinarySearchIterative(int value, int[] Array)
+        {
+            // { 0, 1, 2, 3, 4, 5, 6, 7 };
+            int min = 0;
+            int max = Array.Length-1;
+            int pos = (max + min) / 2;
+
+            while(min != max)
+            {
+                if(Array[pos] < value)
+                {
+                    min = pos + 1;
+                    pos = (max + min) / 2;
+                }
+                else if(Array[pos] > value)
+                {
+                    max = pos - 1;
+                    pos = (max + min) / 2;
+                }
+                if (Array[pos] == value)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         static void Main(string[] args)
         {
             int[] integerArray = { 2, 3, 4, 7, 2, 1, -1, 4, 6, 3, 2, 33, 75};
+            int[] sortedArray = { 0, 1, 2, 3, 4, 5, 6, 7 };
             //int[] integerArray = {2,3,4};
 
             bool answer = false;
-            int position = 0;
-            bool recurse = false;
+            //int position = 0;
+            ////bool recurse = false;
             ////bool answer = linearSearchIterative(2, integerArray);
-            answer = LinearSearchRecursive(7, integerArray, position,recurse);
+            //answer = LinearSearchRecursive(7, integerArray, position,recurse);
+            answer = BinarySearchIterative(7, sortedArray);
             Console.WriteLine(answer);
             Console.ReadLine();
         }
