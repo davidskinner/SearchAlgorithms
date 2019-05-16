@@ -30,9 +30,9 @@ namespace SearchAlgorithms
         /// <param name="value">The value we are looking for.</param>
         /// <param name="Array">The array we are searching through.</param>
         /// <param name="position">Our place in the array.</param>
-        /// <param name="recurse">The truth value of whether or not the array contains the value.</param>
+        /// <param name="truthValue">The truth value of whether or not the array contains the value.</param>
         /// <returns></returns>
-        public static bool LinearSearchRecursive(int value, int[] Array, int position, bool recurse)
+        public static bool LinearSearchRecursive(int value, int[] Array, int position, bool truthValue)
         {
             if (position == Array.Length - 1)
             {
@@ -45,16 +45,18 @@ namespace SearchAlgorithms
             }
 
             // hang on to 'recurse' through the call stack
-            recurse = LinearSearchRecursive(value, Array, ++position,recurse);
-            return recurse;
+            truthValue = LinearSearchRecursive(value, Array, ++position,truthValue);
+            return truthValue;
         }
 
         /// <summary>
-        /// Keep dividing the sub-array based on the directi
+        /// Increment the positions of the max and min of the sub-array based on whether or not the value you are looking for is higher
+        /// or lower than where you currently are.
+        /// Pretty simple to reason through, and easy to implement.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="Array"></param>
-        /// <returns></returns>
+        /// <param name="value">The value you are looking for.</param>
+        /// <param name="Array">The integer array to search through,</param>
+        /// <returns>The truth value of whether or not value is in Array.</returns>
         public static bool BinarySearchIterative(int value, int[] Array)
         {
             // { 0, 1, 2, 3, 4, 5, 6, 7 };
@@ -74,6 +76,8 @@ namespace SearchAlgorithms
                     max = pos - 1;
                     pos = (max + min) / 2;
                 }
+                
+                // if you do not check position here, you risk skipping the end points 
                 if (Array[pos] == value)
                 {
                     return true;
@@ -82,18 +86,44 @@ namespace SearchAlgorithms
             return false;
         }
 
+        public static bool BinarySearchRecursive(int value, int[] Array, int max, int min, int pos, bool truthValue)
+        {
+            truthValue = false;
+
+            if(Array[pos] == value)
+            {
+                return true;
+            }
+            if(min == max)
+            {
+                return false;
+            }
+
+            if(Array[pos] < value)
+            {
+                min = pos + 1;
+                pos = (max + min) / 2;
+                truthValue = BinarySearchRecursive(value, Array, max, min, pos, truthValue);
+            }
+            else if (Array[pos] > value)
+            {
+                max = pos - 1;
+                pos = (max + min) / 2;
+                truthValue = BinarySearchRecursive(value, Array, max, min, pos, truthValue);
+            }
+            return truthValue;
+        }
+
         static void Main(string[] args)
         {
             int[] integerArray = { 2, 3, 4, 7, 2, 1, -1, 4, 6, 3, 2, 33, 75};
             int[] sortedArray = { 0, 1, 2, 3, 4, 5, 6, 7 };
-            //int[] integerArray = {2,3,4};
 
             bool answer = false;
-            //int position = 0;
-            ////bool recurse = false;
             ////bool answer = linearSearchIterative(2, integerArray);
             //answer = LinearSearchRecursive(7, integerArray, position,recurse);
-            answer = BinarySearchIterative(5, sortedArray);
+            //answer = BinarySearchIterative(5, sortedArray);
+            answer = BinarySearchRecursive(5, sortedArray, sortedArray.Length - 1, 0, (sortedArray.Length - 1 + 0) / 2, false);
             Console.WriteLine(answer);
             Console.ReadLine();
         }
