@@ -85,7 +85,18 @@ namespace SearchAlgorithms
             }
             return false;
         }
-
+        
+        /// <summary>
+        /// Flip the logic for the ending condition from the iterative approach. 
+        /// Otherwise this is extremely similar to the iterative approach.
+        /// </summary>
+        /// <param name="value">The value you are looking for.</param>
+        /// <param name="Array">The array to look through.</param>
+        /// <param name="max">The max value of the sub-array.</param>
+        /// <param name="min">The min value of the sub-array.</param>
+        /// <param name="pos">The current position in the sub-array.</param>
+        /// <param name="truthValue">Bool value used to hang on to the search result through the callstack.</param>
+        /// <returns></returns>
         public static bool BinarySearchRecursive(int value, int[] Array, int max, int min, int pos, bool truthValue)
         {
             truthValue = false;
@@ -120,10 +131,10 @@ namespace SearchAlgorithms
             int[] sortedArray = { 0, 1, 2, 3, 4, 5, 6, 7 };
 
             bool answer = false;
-            ////bool answer = linearSearchIterative(2, integerArray);
+            //answer = LinearSearchIterative(2, integerArray);
             //answer = LinearSearchRecursive(7, integerArray, position,recurse);
             //answer = BinarySearchIterative(5, sortedArray);
-            answer = BinarySearchRecursive(5, sortedArray, sortedArray.Length - 1, 0, (sortedArray.Length - 1 + 0) / 2, false);
+            //answer = BinarySearchRecursive(6, sortedArray, sortedArray.Length - 1, 0, (sortedArray.Length - 1 + 0) / 2, false);
             Console.WriteLine(answer);
             Console.ReadLine();
         }
