@@ -25,7 +25,6 @@ namespace SearchAlgorithms
 
         /// <summary>
         /// Stopping conditions for this recursive function are that we reach the end of the array or we find the value.
-        /// Took longer than I will say to implement.
         /// </summary>
         /// <param name="value">The value we are looking for.</param>
         /// <param name="Array">The array we are searching through.</param>
